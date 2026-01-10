@@ -18,15 +18,15 @@ public class MenuList
     public MenuList(params (string, Action)[] menuTexts)
     {
 
-        if(menuTexts.Length == 0) { _menus = new List<(string, Action)>(); }
+        if (menuTexts.Length == 0) { _menus = new List<(string, Action)>(); }
 
         else { _menus = menuTexts.ToList(); }
 
-        for( int i =0; i < _menus.Count; i++)
+        for (int i = 0; i < _menus.Count; i++)
         {
             int textWidth = _menus[i].text.GetTextWidth();
 
-            if(_maxLength < textWidth) { _maxLength = textWidth; }
+            if (_maxLength < textWidth) { _maxLength = textWidth; }
         }
 
         _outline = new Ractangle(width: _maxLength + 4, height: _menus.Count + 2);
@@ -37,35 +37,53 @@ public class MenuList
         _menus.Add((text, action));
 
         int textWidth = text.GetTextWidth();
-        if ( _maxLength < textWidth) { _maxLength = textWidth; }
+        if (_maxLength < textWidth) { _maxLength = textWidth; }
 
         _outline.Width = _maxLength + 6;
         _outline.Height++;
     }
 
+    // 정해진 인덱스에 들어갈 오브젝트의 심볼과 기능을 넣기
+    public void SetOnObject(int index, char symbol, Action action)
+    {
+        _menus[index] = (symbol.ToString(), action);
+    }
+
     public void Select()
     {
-        if(_menus.Count == 0) { return; }
+        if (_menus.Count == 0) { return; }
 
         _menus[_currentIndex].action?.Invoke();
 
-        if(_currentIndex >= _menus.Count) { _currentIndex = _menus.Count - 1; }
+        if (_currentIndex >= _menus.Count) { _currentIndex = _menus.Count - 1; }
 
-        else if(_menus.Count == 0 ) { _currentIndex = 0; }
+        else if (_menus.Count == 0) { _currentIndex = 0; }
     }
 
     public void SelectUp()
     {
         _currentIndex--;
 
-        if(_currentIndex < 0) { _currentIndex = 0; }
+        if (_currentIndex < 0) { _currentIndex = 0; }
     }
-
     public void SelectDown()
     {
         _currentIndex++;
 
-        if(_currentIndex >= _menus.Count) { _currentIndex = _menus.Count - 1; }
+        if (_currentIndex >= _menus.Count) { _currentIndex = _menus.Count - 1; }
+    }
+
+    public void SelectLeft()
+    {
+        if (_currentIndex - 3 < 0) { return; }
+
+        _currentIndex -= 3;
+    }
+    public void SelectRight()
+    {
+        if (_currentIndex + 3 > _menus.Count-1) { return; }
+
+        _currentIndex += 3;
     }
 
     public void Render(int x, int y, bool needSelect = false)
@@ -74,12 +92,12 @@ public class MenuList
         _outline.Y = y;
         _outline.Draw();
 
-        for(int i =0; i< _menus.Count; i++)
+        for (int i = 0; i < _menus.Count; i++)
         {
             y++;
             Console.SetCursorPosition(x + 2, y);
 
-            if( i == _currentIndex && needSelect)
+            if (i == _currentIndex && needSelect)
             {
                 "▶".Print(ConsoleColor.DarkCyan);
                 _menus[i].text.Print(ConsoleColor.DarkCyan);
@@ -94,13 +112,46 @@ public class MenuList
             }
         }
     }
+    public void CellRender(int x, int y)
+    {
+        _outline = new Ractangle(width: 9, height: 5);
 
 
+        for (int i = 0; i < _menus.Count; i++)
+        {
+            if (i != 0 && i % 3 == 0)
+            {
+                x += 9;
+                y = 0;
+            }
 
+            _outline.X = x;
+            _outline.Y = y;
+            _outline.Draw();
+
+            Console.SetCursorPosition(x + 4, y+2);
+
+            if (i == _currentIndex)
+            {
+                "P".Print(ConsoleColor.DarkCyan);
+            }
+            else
+            {
+                Console.Write(" ");
+                _menus[i].text.Print();
+            }
+            y += 5;
+        }
+    }
 
     public void Reset()
     {
         _currentIndex = 0;
+    }
+
+    public void ResetCell(int index)
+    {
+        _menus[index] = (" ", null);
     }
 
     public void Remove()
@@ -109,7 +160,7 @@ public class MenuList
 
         int max = 0;
 
-        foreach((string text, Action action) in _menus)
+        foreach ((string text, Action action) in _menus)
         {
             int textWidth = text.GetTextWidth();
 
@@ -122,5 +173,8 @@ public class MenuList
         _outline.Height--;
     }
 
-
+    public int GetListCount()
+    {
+        return _menus.Count;
+    }
 }

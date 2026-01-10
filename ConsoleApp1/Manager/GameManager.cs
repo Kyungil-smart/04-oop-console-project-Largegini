@@ -17,12 +17,14 @@ public class GameManager
 
     private void Init()
     {
+        Console.CursorVisible = false;
+
         IsGameOver = false;
         _player = new Player();
         //Console.SetBufferSize(256, 256);
 
         SceneManager.AddScene("Title", new Title());
-        SceneManager.AddScene("House", new House());
+        SceneManager.AddScene("House", new House(_player));
 
         SceneManager.Change("Title");
     }
