@@ -25,9 +25,11 @@ public class GameManager
 
         SceneManager.AddScene("Title", new Title());
         SceneManager.AddScene("House", new House(_player));
+        SceneManager.AddScene("Ending", new Ending());
 
         SceneManager.Change("Title");
     }
+
     public void Run()
     {
         Init();

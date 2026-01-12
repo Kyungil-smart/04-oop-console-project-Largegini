@@ -32,8 +32,7 @@ public class Inventory
     {
         if(!IsActive) { return; }
 
-
-        _itemMenu.Render(50, 1, true);
+        _itemMenu.Render(30, 1, true);
     }
 
     public void Select()

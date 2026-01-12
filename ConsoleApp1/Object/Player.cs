@@ -3,7 +3,7 @@ public class Player : GameObject
 {
     private Inventory _inventory;
 
-    public bool IsCanControl;
+    public bool IsCanControl { get; set; }
     public Player() => Init();
 
     public void Init()

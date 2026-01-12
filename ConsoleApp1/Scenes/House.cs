@@ -9,13 +9,13 @@ public class House : Scene
     //private Tile[,] _room = new Tile[3, 3];
     private MenuList _roomCell;
     // 방마다 있어야 할 것이 뭐지
+    private GameObject[] InroomObject;
     //  - 조사가능한 오브젝트
     //      - 퍼즐
     //      - 아이템 사용할 수 있는 곳
-    //      - 열쇠 획득
-    private GameObject[] InroomObeject;
     //  - 문
     //  - 잠긴문
+    Random ranNum;
     public House(Player player) => Init(player);
 
     private string _noticeText;
@@ -23,26 +23,18 @@ public class House : Scene
 
     public void Init(Player player)
     {
+        ranNum = new Random();
         _player = player;
         _noticeText = "방을 탈출하자!";
         _canControl = true;
 
         // 빈공간으로 먼저 방을 구성
         _roomCell = new MenuList();
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
-        _roomCell.Add(" ", null);
+        ResetRoom();
 
         // 방안에 있을 오브젝트 리스트 초기화
-        InroomObeject = new GameObject[_roomCell.GetListCount()];
-        SetDesign(1);
-
+        InroomObject = new GameObject[_roomCell.GetListCount()];
+        
         //for(int y =0; y<_room.GetLength(0); y++)
         //{
         //    for(int x =0; x < _room.GetLength(1); x++)
@@ -51,12 +43,14 @@ public class House : Scene
         //        _room[y, x] = new Tile(pos);
         //    }
         //}
-
     }
 
     public override void Enter()
     {
-
+        InroomObject[5] =  new Door(_player);
+        _roomCell.SetOnObject(5, InroomObject[5].Symbol,
+            GetInteractable(InroomObject[5]).ContractPlayer);
+        SetDesign();
     }
 
     public override void Update()
@@ -67,10 +61,14 @@ public class House : Scene
         {
             if (InputManager.GetKey(ConsoleKey.UpArrow))
             {
+                if(_roomCell.CurrentIndex % 3 ==0) { return; }
+
                 _roomCell.SelectUp();
             }
             if (InputManager.GetKey(ConsoleKey.DownArrow))
             {
+                if (_roomCell.CurrentIndex % 3 == 2) { return; }
+
                 _roomCell.SelectDown();
             }
             if (InputManager.GetKey(ConsoleKey.LeftArrow))
@@ -85,16 +83,19 @@ public class House : Scene
 
         // 2. 조사
         //  - 아이템 획득
+        //      - 열쇠 획득
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
-            if (InroomObeject[index] is KeyItem)
+            if (InroomObject[index] is KeyItem)
             {
-                _noticeText = (InroomObeject[index]as KeyItem).GetText;
-                _roomCell.Select();
+                _noticeText = (InroomObject[index]as KeyItem).GetText;
                 _roomCell.ResetCell(index);
-                InroomObeject[index] = null;
+                InroomObject[index] = null;
             }
+
+            _roomCell.Select();
+
         }
 
         _canControl = _player.Update();
@@ -117,24 +118,53 @@ public class House : Scene
 
     public override void Exit()
     {
-
+        ResetRoom();
+        ResetObject();
     }
-
-    private void GetItemAction()
+    private void SetDesign()
     {
-    }
+        
+        int ranIndex = ranNum.Next(0, InroomObject.Length);
 
-    private void SetDesign(int ObjectNum)
-    {
-        Random ranNum = new Random();
-        int ranIndex = ranNum.Next(0, InroomObeject.Length);
-        InroomObeject[ranIndex] = new KeyItem(_player) { Name = "열쇠" };
-
-        if (InroomObeject[ranIndex] is IInteractable)
+        if (ranIndex != 5)
         {
-            IInteractable InteractableObj = InroomObeject[ranIndex] as IInteractable;
-            _roomCell.SetOnObject(ranIndex, InroomObeject[ranIndex].Symbol,
+            if (InroomObject[ranIndex] != null) { return; }
+
+            InroomObject[ranIndex] = new KeyItem(_player) { Name = "열쇠" };
+
+            IInteractable InteractableObj = GetInteractable(InroomObject[ranIndex]);
+            _roomCell.SetOnObject(ranIndex, InroomObject[ranIndex].Symbol,
              InteractableObj.ContractPlayer);
+        }
+
+        else { SetDesign(); }
+    }
+
+    private IInteractable GetInteractable( GameObject gameObject )
+    {
+        if (gameObject is IInteractable)
+        {
+            IInteractable InteractableObj = gameObject as IInteractable;
+
+            return InteractableObj;
+        }
+
+        return null;
+    }
+
+    private void ResetRoom()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            _roomCell.Add(" ", null);
+        }
+    }
+
+    private void ResetObject()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            InroomObject[i] = null;
         }
     }
 }
