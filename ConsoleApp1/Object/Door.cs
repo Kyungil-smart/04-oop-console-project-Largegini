@@ -7,8 +7,10 @@
     public Door(Player player) => Init(player);
     public void Init(Player player)
     {
-        Symbol = 'D';
+        Symbol = "🔒";
         _player = player;
+        IsLocked = true;
+        contractText = "잠겨있다. 열쇠가 필요할 것 같다.";
     }
 
     public void ContractPlayer()
@@ -16,6 +18,7 @@
         if(IsLocked)
         {
             // 잠겨있다.
+
         }
 
         else 

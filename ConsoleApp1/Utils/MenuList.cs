@@ -44,9 +44,9 @@ public class MenuList
     }
 
     // 정해진 인덱스에 들어갈 오브젝트의 심볼과 기능을 넣기
-    public void SetOnObject(int index, char symbol, Action action)
+    public void SetOnObject(int index, string symbol, Action action)
     {
-        _menus[index] = (symbol.ToString(), action);
+        _menus[index] = (symbol, action);
     }
 
     public void Select()
@@ -137,7 +137,6 @@ public class MenuList
             }
             else
             {
-                Console.Write(" ");
                 _menus[i].text.Print();
             }
             y += 5;

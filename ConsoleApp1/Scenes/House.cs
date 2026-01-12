@@ -87,15 +87,14 @@ public class House : Scene
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
+            _roomCell?.Select();
+            _noticeText = (InroomObject[index]?.GetText);
+
             if (InroomObject[index] is KeyItem)
             {
-                _noticeText = (InroomObject[index]as KeyItem).GetText;
                 _roomCell.ResetCell(index);
                 InroomObject[index] = null;
             }
-
-            _roomCell.Select();
-
         }
 
         _canControl = _player.Update();

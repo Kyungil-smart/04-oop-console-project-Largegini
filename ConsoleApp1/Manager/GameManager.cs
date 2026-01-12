@@ -18,6 +18,7 @@ public class GameManager
     private void Init()
     {
         Console.CursorVisible = false;
+        Console.OutputEncoding = Encoding.UTF8;
 
         IsGameOver = false;
         _player = new Player();
