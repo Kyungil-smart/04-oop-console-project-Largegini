@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\object\\puzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\puzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\utils\\menulist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:utils\\menulist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\scenes\\house.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:scenes\\house.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\submit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:submit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\utils\\menulist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:utils\\menulist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\scenes\\house.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:scenes\\house.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\data\\puzzletext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:data\\puzzletext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\object\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\utils\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:utils\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,59 +38,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "House.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Scenes\\House.cs",
               "RelativeDocumentMoniker": "Scenes\\House.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Scenes\\House.cs",
               "RelativeToolTip": "Scenes\\House.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAwwIMAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwIMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T00:35:19.787Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PuzzleText.cs",
-              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Data\\PuzzleText.cs",
-              "RelativeDocumentMoniker": "Data\\PuzzleText.cs",
-              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Data\\PuzzleText.cs",
-              "RelativeToolTip": "Data\\PuzzleText.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T08:14:26.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Utils\\Inventory.cs",
-              "RelativeDocumentMoniker": "Utils\\Inventory.cs",
-              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Utils\\Inventory.cs",
-              "RelativeToolTip": "Utils\\Inventory.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBQAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T03:35:08.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Door.cs",
-              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Door.cs",
-              "RelativeDocumentMoniker": "Object\\Door.cs",
-              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Door.cs",
-              "RelativeToolTip": "Object\\Door.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T01:09:57.29Z",
               "EditorCaption": ""
             },
             {
@@ -109,40 +62,40 @@
               "RelativeDocumentMoniker": "Utils\\MenuList.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Utils\\MenuList.cs",
               "RelativeToolTip": "Utils\\MenuList.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAiwIgAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAUwIkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T06:14:34.967Z",
+              "WhenOpened": "2026-01-12T16:02:05.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "PuzzleText.cs",
+              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Data\\PuzzleText.cs",
+              "RelativeDocumentMoniker": "Data\\PuzzleText.cs",
+              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Data\\PuzzleText.cs",
+              "RelativeToolTip": "Data\\PuzzleText.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:14:26.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Player.cs",
               "RelativeDocumentMoniker": "Object\\Player.cs",
-              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Player.cs*",
-              "RelativeToolTip": "Object\\Player.cs*",
-              "ViewState": "AgIAADoAAAAAAAAAAIAwwE4AAAAXAAAAAAAAAA==",
+              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Player.cs",
+              "RelativeToolTip": "Object\\Player.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCEAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-08T07:42:48.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Submit.cs",
-              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Submit.cs",
-              "RelativeDocumentMoniker": "Submit.cs",
-              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Submit.cs",
-              "RelativeToolTip": "Submit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T08:20:33.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "KeyItem.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\KeyItem.cs",
               "RelativeDocumentMoniker": "Object\\KeyItem.cs",
@@ -161,15 +114,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Puzzle.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Puzzle.cs",
               "RelativeDocumentMoniker": "Object\\Puzzle.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Puzzle.cs",
               "RelativeToolTip": "Object\\Puzzle.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAkwCwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T07:57:55.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Submit.cs",
+              "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Submit.cs",
+              "RelativeDocumentMoniker": "Submit.cs",
+              "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Submit.cs",
+              "RelativeToolTip": "Submit.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAuwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T08:20:33.388Z",
               "EditorCaption": ""
             }
           ]

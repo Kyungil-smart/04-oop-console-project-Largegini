@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -15,12 +16,13 @@ public class Puzzle : GameObject, IInteractable
 
     private Player _player;
     private Submit _submitAnswer;
+
     public Puzzle(Player player) => Init(player);
     public void Init(Player player)
     {
         _answer = 1208;
         _currentIndex = 0;
-        // 🔕
+
         Symbol = "🔔";
 
         _submitAnswer = new Submit();
@@ -34,31 +36,39 @@ public class Puzzle : GameObject, IInteractable
     {
         // 상호작용 시 팝업 띄우기
         _player.SolvePuzzle();
+        NoticeText.Text = "답을 맞춰보자";
     }
-    public void SelectLeft()
+    
+    public void Update()
     {
-        if(!IsActive) { return; }
+        if (!IsActive) { return; }
 
-        _currentIndex--;
-
-        if (_currentIndex < 0)
+        if(InputManager.GetKey(ConsoleKey.UpArrow))
         {
-            _currentIndex = 0;
+            _submitAnswer.IncreaseValue();
         }
-    }
 
-    public void SelectRight()
-    {
-        if(!IsActive) { return; }
-
-        _currentIndex++;
-
-        if (_currentIndex >= _submitAnswer.Answer.Length)
+        if(InputManager.GetKey(ConsoleKey.DownArrow))
         {
-            _currentIndex = _submitAnswer.Answer.Length - 1;
+            _submitAnswer.DecreaseValue();
         }
-    }
 
+        if(InputManager.GetKey(ConsoleKey.RightArrow))
+        {
+            _submitAnswer.SelectRight();
+        }
+
+        if(InputManager.GetKey(ConsoleKey.LeftArrow))
+        {
+            _submitAnswer.SelectLeft();
+        }
+
+        if(InputManager.GetKey(ConsoleKey.Enter))
+        {
+            Solve();
+        }
+
+    }
     public void Render()
     {
         if(!IsActive) { return; }
@@ -68,19 +78,18 @@ public class Puzzle : GameObject, IInteractable
 
     public void Solve()
     {
-        int intAnswer = 0;
-        int digit = _submitAnswer.Answer.Length - 1;
+        int answer = _submitAnswer.GetAnswer();
 
-        foreach(int i in _submitAnswer.Answer)
+        if (answer == _answer)
         {
-            intAnswer += (i * (int)Math.Pow(10,digit));
-            digit--;
+            IsSolved = true;
+            Symbol = "🔕";
+            NoticeText.Text = "답을 맞췄다!";
         }
 
-        if (intAnswer == _answer)
+        else
         {
-            IsSolved = true; 
-
+            NoticeText.Text = "답이 아닌 것 같다.";
         }
     }
 }

@@ -31,6 +31,8 @@ public class Player : GameObject
     {
         if (InputManager.GetKey(ConsoleKey.Tab))
         {
+            if(_solvingPuzzle !=null && _solvingPuzzle.IsActive) { return false; }
+
             _inventory.IsActive = !_inventory.IsActive;
             IsCanControl = !_inventory.IsActive;
         }
@@ -55,20 +57,13 @@ public class Player : GameObject
             _inventory.SelectDown();
         }
 
-        if (InputManager.GetKey(ConsoleKey.RightArrow))
-        {
-            _solvingPuzzle?.SelectRight();
-        }
-
-        if (InputManager.GetKey(ConsoleKey.LeftArrow))
-        {
-            _solvingPuzzle?.SelectRight();
-        }
         //  - 아이템 사용
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             _inventory.Select();
         }
+
+        _solvingPuzzle?.Update();
 
         return IsCanControl;
     }

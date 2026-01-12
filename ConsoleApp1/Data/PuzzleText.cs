@@ -1,15 +1,19 @@
-﻿public struct PuzzleText
+﻿using System;
+
+public struct PuzzleText
 {
-    private string[] _text;
+    public string[] _text;
 
-    //public void Puzeel;
+    public ConsoleColor _color { get; set; }
 
-    public void Init()
+    public PuzzleText(ConsoleColor color) 
     {
         _text = new string[]
         {
             "플밍 4기의 개강일은?"
         };
+
+        _color = color;
     }
 
 }
