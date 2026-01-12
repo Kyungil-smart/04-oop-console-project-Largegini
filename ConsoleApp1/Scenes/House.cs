@@ -19,11 +19,13 @@ public class House : Scene
     public House(Player player) => Init(player);
 
     private string _noticeText;
+    private bool _canControl;
 
     public void Init(Player player)
     {
         _player = player;
         _noticeText = "방을 탈출하자!";
+        _canControl = true;
 
         // 빈공간으로 먼저 방을 구성
         _roomCell = new MenuList();
@@ -61,22 +63,28 @@ public class House : Scene
     {
         // 행동을 선택지로 제공
         // 1. 이동
-        if (InputManager.GetKey(ConsoleKey.UpArrow))
+        if (_canControl)
         {
-            _roomCell.SelectUp();
+            if (InputManager.GetKey(ConsoleKey.UpArrow))
+            {
+                _roomCell.SelectUp();
+            }
+            if (InputManager.GetKey(ConsoleKey.DownArrow))
+            {
+                _roomCell.SelectDown();
+            }
+            if (InputManager.GetKey(ConsoleKey.LeftArrow))
+            {
+                _roomCell.SelectLeft();
+            }
+            if (InputManager.GetKey(ConsoleKey.RightArrow))
+            {
+                _roomCell.SelectRight();
+            }
         }
-        if (InputManager.GetKey(ConsoleKey.DownArrow))
-        {
-            _roomCell.SelectDown();
-        }
-        if (InputManager.GetKey(ConsoleKey.LeftArrow))
-        {
-            _roomCell.SelectLeft();
-        }
-        if (InputManager.GetKey(ConsoleKey.RightArrow))
-        {
-            _roomCell.SelectRight();
-        }
+
+        // 2. 조사
+        //  - 아이템 획득
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
@@ -89,10 +97,10 @@ public class House : Scene
             }
         }
 
+        _canControl = _player.Update();
+        
         //  - 잠긴문이면 이동불가
-        // 2. 조사
         //  - 퍼즐
-        //  - 아이템 획득
         //  - 아이템 사용
     }
 
@@ -100,6 +108,8 @@ public class House : Scene
     {
         //PrintRoomCell();
         _roomCell.CellRender(0, 0);
+
+        _player.Render();
 
         Console.SetCursorPosition(0, 16);
         Console.Write(_noticeText);

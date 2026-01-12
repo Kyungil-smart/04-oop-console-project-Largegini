@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:scenes\\house.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\utils\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\utils\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:utils\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\keyitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|g:\\github\\04-oop-console-project-largegini\\consoleapp1\\object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A07D3C9-AE9A-4AA2-8E86-34CE45299972}|ConsoleApp1.csproj|solutionrelative:object\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Scenes\\House.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Scenes\\House.cs*",
               "RelativeToolTip": "Scenes\\House.cs*",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAowH4AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T00:35:19.787Z",
               "IsPinned": true,
@@ -44,39 +44,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Player.cs",
               "RelativeDocumentMoniker": "Object\\Player.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\Player.cs",
               "RelativeToolTip": "Object\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwB4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-08T07:42:48.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "KeyItem.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\KeyItem.cs",
               "RelativeDocumentMoniker": "Object\\KeyItem.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Object\\KeyItem.cs",
               "RelativeToolTip": "Object\\KeyItem.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwB8AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T16:53:18.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Inventory.cs",
               "DocumentMoniker": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Utils\\Inventory.cs",
               "RelativeDocumentMoniker": "Utils\\Inventory.cs",
               "ToolTip": "G:\\Github\\04-oop-console-project-Largegini\\ConsoleApp1\\Utils\\Inventory.cs",
               "RelativeToolTip": "Utils\\Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwB4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T02:58:06.789Z",
               "EditorCaption": ""
