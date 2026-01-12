@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\GuideText.cs" />
+    <Compile Include="Data\PuzzleText.cs" />
+    <Compile Include="Submit.cs" />
     <Compile Include="Interface\IInteractable.cs" />
     <Compile Include="Manager\GameManager.cs" />
     <Compile Include="Manager\InputManager.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="Object\Item.cs" />
     <Compile Include="Object\KeyItem.cs" />
     <Compile Include="Object\Player.cs" />
+    <Compile Include="Object\Puzzle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\Ending.cs" />

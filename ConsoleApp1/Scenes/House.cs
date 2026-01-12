@@ -97,12 +97,11 @@ public class House : Scene
                 _inroomObject[index] = null;
             }
         }
-        //  - 아이템 사용
 
         _canControl = _player.Update();
         
-        //  - 잠긴문이면 이동불가
         //  - 퍼즐
+
     }
 
     public override void Render()
@@ -110,6 +109,7 @@ public class House : Scene
         _roomCell.CellRender(0, 0);
 
         _player.Render();
+
 
         Console.SetCursorPosition(0, 16);
         Console.Write(NoticeText.Text);
@@ -129,7 +129,7 @@ public class House : Scene
         {
             if (_inroomObject[ranIndex] != null) { return; }
 
-            _inroomObject[ranIndex] = new KeyItem(_player) { Name = "열쇠" };
+            _inroomObject[ranIndex] = new Puzzle(_player);
 
             IInteractable InteractableObj = GetInteractable(_inroomObject[ranIndex]);
             _roomCell.SetOnObject(ranIndex, _inroomObject[ranIndex].Symbol,

@@ -134,7 +134,7 @@ public class MenuList
 
             if (i == _currentIndex)
             {
-                "P".Print(ConsoleColor.DarkCyan);
+                "👣".Print(ConsoleColor.DarkCyan);
             }
             else
             {

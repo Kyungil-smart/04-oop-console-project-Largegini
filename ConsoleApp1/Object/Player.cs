@@ -7,12 +7,18 @@ public class Player : GameObject
     public MenuList RoomCell;
     public GameObject[] InroomObject;
 
+    private GameObject _currentObj;
+    private Puzzle _solvingPuzzle;
+
     public bool IsCanControl { get; set; }
     public Player() => Init();
 
     public void Init()
     {
         _inventory = new Inventory(this);
+        _currentObj = null;
+        _solvingPuzzle = null;
+
         IsCanControl = true;
     }
 
@@ -32,6 +38,10 @@ public class Player : GameObject
         if(InputManager.GetKey(ConsoleKey.Escape))
         {
             _inventory.IsActive = false;
+
+            if(_solvingPuzzle !=null)
+                _solvingPuzzle.IsActive = false;
+
             IsCanControl = true;
         }
 
@@ -45,7 +55,17 @@ public class Player : GameObject
             _inventory.SelectDown();
         }
 
-        if(InputManager.GetKey(ConsoleKey.Enter))
+        if (InputManager.GetKey(ConsoleKey.RightArrow))
+        {
+            _solvingPuzzle?.SelectRight();
+        }
+
+        if (InputManager.GetKey(ConsoleKey.LeftArrow))
+        {
+            _solvingPuzzle?.SelectRight();
+        }
+        //  - 아이템 사용
+        if (InputManager.GetKey(ConsoleKey.Enter))
         {
             _inventory.Select();
         }
@@ -56,21 +76,39 @@ public class Player : GameObject
     public void Render()
     {
         _inventory.Render();
+        _solvingPuzzle?.Render();
     }
 
     public bool UnlockDoor()
     {
-        if(InroomObject[RoomCell.CurrentIndex] == null)
+        _currentObj = InroomObject[RoomCell.CurrentIndex];
+        // 엉뚱한 곳에서 열쇠를 쓰지 못하게 하기
+        if (_currentObj  == null)
         {
             NoticeText.Text = "사용할 수 없다.";
             return false;
         }
-        else if (InroomObject[RoomCell.CurrentIndex] is Door )
+
+        else if (_currentObj is Door )
         {
             // 사용해서 잠금해제
-            (InroomObject[RoomCell.CurrentIndex] as Door).Unlock();
+            (_currentObj as Door).Unlock();
+
+            _currentObj = null;
             return true;
         }
         return false;
+    }
+    public void SolvePuzzle()
+    {
+        _currentObj = InroomObject[RoomCell.CurrentIndex];
+        if ( _currentObj is Puzzle)
+        {
+            _solvingPuzzle = _currentObj as Puzzle;
+            _solvingPuzzle.IsActive = true;
+            IsCanControl = !_solvingPuzzle.IsActive;
+        }
+
+        else { _solvingPuzzle = null; }
     }
 }
