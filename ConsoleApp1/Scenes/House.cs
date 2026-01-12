@@ -9,7 +9,7 @@ public class House : Scene
     //private Tile[,] _room = new Tile[3, 3];
     private MenuList _roomCell;
     // 방마다 있어야 할 것이 뭐지
-    private GameObject[] InroomObject;
+    private GameObject[] _inroomObject;
     //  - 조사가능한 오브젝트
     //      - 퍼즐
     //      - 아이템 사용할 수 있는 곳
@@ -18,22 +18,24 @@ public class House : Scene
     Random ranNum;
     public House(Player player) => Init(player);
 
-    private string _noticeText;
     private bool _canControl;
 
     public void Init(Player player)
     {
         ranNum = new Random();
         _player = player;
-        _noticeText = "방을 탈출하자!";
+
+        NoticeText.Text = "방을 탈출하자!";
         _canControl = true;
 
         // 빈공간으로 먼저 방을 구성
         _roomCell = new MenuList();
         ResetRoom();
+        _player.RoomCell = _roomCell;
 
         // 방안에 있을 오브젝트 리스트 초기화
-        InroomObject = new GameObject[_roomCell.GetListCount()];
+        _inroomObject = new GameObject[_roomCell.GetListCount()];
+        _player.InroomObject = _inroomObject;
         
         //for(int y =0; y<_room.GetLength(0); y++)
         //{
@@ -47,9 +49,9 @@ public class House : Scene
 
     public override void Enter()
     {
-        InroomObject[5] =  new Door(_player);
-        _roomCell.SetOnObject(5, InroomObject[5].Symbol,
-            GetInteractable(InroomObject[5]).ContractPlayer);
+        _inroomObject[5] =  new Door(_player);
+        _roomCell.SetOnObject(5, _inroomObject[5].Symbol,
+            GetInteractable(_inroomObject[5]).ContractPlayer);
         SetDesign();
     }
 
@@ -84,16 +86,16 @@ public class House : Scene
         // 2. 조사
         //  - 아이템 획득
         //      - 열쇠 획득
+        //  - 아이템 사용
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
             _roomCell?.Select();
-            _noticeText = (InroomObject[index]?.GetText);
 
-            if (InroomObject[index] is KeyItem)
+            if (_inroomObject[index] is KeyItem)
             {
                 _roomCell.ResetCell(index);
-                InroomObject[index] = null;
+                _inroomObject[index] = null;
             }
         }
 
@@ -101,18 +103,16 @@ public class House : Scene
         
         //  - 잠긴문이면 이동불가
         //  - 퍼즐
-        //  - 아이템 사용
     }
 
     public override void Render()
     {
-        //PrintRoomCell();
         _roomCell.CellRender(0, 0);
 
         _player.Render();
 
         Console.SetCursorPosition(0, 16);
-        Console.Write(_noticeText);
+        Console.Write(NoticeText.Text);
     }
 
     public override void Exit()
@@ -123,16 +123,16 @@ public class House : Scene
     private void SetDesign()
     {
         
-        int ranIndex = ranNum.Next(0, InroomObject.Length);
+        int ranIndex = ranNum.Next(0, _inroomObject.Length);
 
         if (ranIndex != 5)
         {
-            if (InroomObject[ranIndex] != null) { return; }
+            if (_inroomObject[ranIndex] != null) { return; }
 
-            InroomObject[ranIndex] = new KeyItem(_player) { Name = "열쇠" };
+            _inroomObject[ranIndex] = new KeyItem(_player) { Name = "열쇠" };
 
-            IInteractable InteractableObj = GetInteractable(InroomObject[ranIndex]);
-            _roomCell.SetOnObject(ranIndex, InroomObject[ranIndex].Symbol,
+            IInteractable InteractableObj = GetInteractable(_inroomObject[ranIndex]);
+            _roomCell.SetOnObject(ranIndex, _inroomObject[ranIndex].Symbol,
              InteractableObj.ContractPlayer);
         }
 
@@ -163,7 +163,7 @@ public class House : Scene
     {
         for (int i = 0; i < 9; i++)
         {
-            InroomObject[i] = null;
+            _inroomObject[i] = null;
         }
     }
 }

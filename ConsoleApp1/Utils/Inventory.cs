@@ -18,7 +18,7 @@ public class Inventory
 
         _items.Add(item);
         _itemMenu.Add(item.Name, item.Use);
-        //item.Inventory = this;
+        item.Bag = this;
         item.Owner = _owner;
     }
 

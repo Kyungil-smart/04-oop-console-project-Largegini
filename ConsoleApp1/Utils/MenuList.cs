@@ -14,6 +14,7 @@ public class MenuList
     private int _currentIndex;
 
     public int CurrentIndex { get => _currentIndex; }
+    public string CurrentText { get => _menus[_currentIndex].text; }
 
     public MenuList(params (string, Action)[] menuTexts)
     {

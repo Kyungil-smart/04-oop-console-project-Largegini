@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Reflection;
 public class Player : GameObject
 {
     private Inventory _inventory;
+
+    public MenuList RoomCell;
+    public GameObject[] InroomObject;
 
     public bool IsCanControl { get; set; }
     public Player() => Init();
@@ -41,11 +45,32 @@ public class Player : GameObject
             _inventory.SelectDown();
         }
 
+        if(InputManager.GetKey(ConsoleKey.Enter))
+        {
+            _inventory.Select();
+        }
+
         return IsCanControl;
     }
 
     public void Render()
     {
         _inventory.Render();
+    }
+
+    public bool UnlockDoor()
+    {
+        if(InroomObject[RoomCell.CurrentIndex] == null)
+        {
+            NoticeText.Text = "사용할 수 없다.";
+            return false;
+        }
+        else if (InroomObject[RoomCell.CurrentIndex] is Door )
+        {
+            // 사용해서 잠금해제
+            (InroomObject[RoomCell.CurrentIndex] as Door).Unlock();
+            return true;
+        }
+        return false;
     }
 }

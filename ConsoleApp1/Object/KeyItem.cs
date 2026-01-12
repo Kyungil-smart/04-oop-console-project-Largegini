@@ -12,11 +12,16 @@ public class KeyItem : Item, IInteractable
         _player = player;
         Symbol = "🗝️";
         Description = "잠긴문을 열 수 있는 열쇠다.";
-        contractText = "열쇠를 얻었다!";
     }
     public override void Use()
     {
-       
+        if (Owner.UnlockDoor())
+        {
+            // 사용시 인벤토리에서 제거
+            Bag.Remove(this);
+            Bag = null;
+            Owner = null;
+        }
     }
 
     public void PrintInfo()
@@ -27,5 +32,6 @@ public class KeyItem : Item, IInteractable
     public void ContractPlayer()
     {
         _player.AddItem(this);
+        NoticeText.Text = "열쇠를 얻었다!";
     }
 }
