@@ -9,8 +9,8 @@
     {
         Symbol = "🔒";
         _player = player;
-        IsLocked = true;
         // 잠겨있다.
+        IsLocked = true;
     }
 
     public void ContractPlayer()
@@ -30,6 +30,8 @@
     public void Unlock()
     {
         Symbol = "🔓";
+        _player.RoomCell.SetOnObject(_player.RoomCell.CurrentIndex,
+            Symbol, ContractPlayer);
         NoticeText.Text = "문이 열렸다!";
         IsLocked = false;
     }

@@ -86,7 +86,6 @@ public class House : Scene
         // 2. 조사
         //  - 아이템 획득
         //      - 열쇠 획득
-        //  - 아이템 사용
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
@@ -98,6 +97,7 @@ public class House : Scene
                 _inroomObject[index] = null;
             }
         }
+        //  - 아이템 사용
 
         _canControl = _player.Update();
         
