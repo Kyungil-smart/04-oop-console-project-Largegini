@@ -45,7 +45,6 @@ public class Puzzle : GameObject, IInteractable
 
         if (IsSolved)
         {
-            Thread.Sleep(1000);
             IsActive = false;
             _player.IsCanControl = true;
 
@@ -75,7 +74,7 @@ public class Puzzle : GameObject, IInteractable
 
         if(InputManager.GetKey(ConsoleKey.Enter))
         {
-            Solve();
+            if (!IsSolved) { Solve(); }
         }
     }
 
@@ -95,7 +94,7 @@ public class Puzzle : GameObject, IInteractable
             IsSolved = true;
             Symbol = "🔕";
             _player.RoomCell.SetOnObject(_player.RoomCell.CurrentIndex,
-                Symbol, ContractPlayer);
+                Symbol, null);
             NoticeText.Text = "답을 맞추자 열쇠가 떨어졌다!";
             IsSolved = true;
         }

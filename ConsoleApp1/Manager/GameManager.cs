@@ -23,7 +23,6 @@ public class GameManager
 
         IsGameOver = false;
         _player = new Player();
-        //Console.SetBufferSize(256, 256);
 
         SceneManager.AddScene("Title", new Title());
         SceneManager.AddScene("House", new House(_player));
@@ -38,15 +37,13 @@ public class GameManager
 
         while(!IsGameOver)
         {
-            Thread.Sleep(300);
+            
             // 출력
             Console.Clear();
             SceneManager.Render();
 
-            if (Console.KeyAvailable)
-            {// 키 입력
+            // 키 입력
                 InputManager.GetUserInput();
-            }
 
             // 데이터 처리
             SceneManager.Update();

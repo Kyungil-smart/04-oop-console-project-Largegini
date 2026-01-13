@@ -37,14 +37,6 @@ public class House : Scene
         _inroomObject = new GameObject[_roomCell.GetListCount()];
         _player.InroomObject = _inroomObject;
         
-        //for(int y =0; y<_room.GetLength(0); y++)
-        //{
-        //    for(int x =0; x < _room.GetLength(1); x++)
-        //    {
-        //        Vector pos = new Vector(x, y);
-        //        _room[y, x] = new Tile(pos);
-        //    }
-        //}
     }
 
     public override void Enter()
@@ -100,10 +92,9 @@ public class House : Scene
             }
         }
 
+        // 플레이어 이동
         _canControl = _player.Update();
         
-        //  - 퍼즐
-
     }
 
     public override void Render()

@@ -67,9 +67,7 @@
     <Compile Include="Utils\NoticeText.cs" />
     <Compile Include="Utils\Ractangle.cs" />
     <Compile Include="Utils\TextExtensions.cs" />
-    <Compile Include="Utils\Tile.cs" />
     <Compile Include="Utils\Time.cs" />
-    <Compile Include="Utils\Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
