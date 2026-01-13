@@ -63,6 +63,7 @@ public class Player : GameObject
             _inventory.Select();
         }
 
+
         _solvingPuzzle?.Update();
 
         return IsCanControl;

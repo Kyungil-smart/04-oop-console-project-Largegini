@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 public class GameManager
@@ -37,12 +38,15 @@ public class GameManager
 
         while(!IsGameOver)
         {
+            Thread.Sleep(300);
             // 출력
             Console.Clear();
             SceneManager.Render();
 
-            // 키 입력
-            InputManager.GetUserInput();
+            if (Console.KeyAvailable)
+            {// 키 입력
+                InputManager.GetUserInput();
+            }
 
             // 데이터 처리
             SceneManager.Update();

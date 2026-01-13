@@ -89,7 +89,9 @@ public class House : Scene
         if (InputManager.GetKey(ConsoleKey.Enter))
         {
             int index = _roomCell.CurrentIndex;
-            _roomCell?.Select();
+
+            if(_canControl)
+                _roomCell?.Select();
 
             if (_inroomObject[index] is KeyItem)
             {

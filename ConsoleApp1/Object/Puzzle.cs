@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 public class Puzzle : GameObject, IInteractable
@@ -12,7 +13,6 @@ public class Puzzle : GameObject, IInteractable
     public bool IsActive;
 
     private int _answer;
-    private int _currentIndex;
 
     private Player _player;
     private Submit _submitAnswer;
@@ -21,7 +21,6 @@ public class Puzzle : GameObject, IInteractable
     public void Init(Player player)
     {
         _answer = 1208;
-        _currentIndex = 0;
 
         Symbol = "🔔";
 
@@ -34,6 +33,7 @@ public class Puzzle : GameObject, IInteractable
 
     public void ContractPlayer()
     {
+        InputManager.ResetKey();
         // 상호작용 시 팝업 띄우기
         _player.SolvePuzzle();
         NoticeText.Text = "답을 맞춰보자";
@@ -42,6 +42,16 @@ public class Puzzle : GameObject, IInteractable
     public void Update()
     {
         if (!IsActive) { return; }
+
+        if (IsSolved)
+        {
+            Thread.Sleep(1000);
+            IsActive = false;
+            _player.IsCanControl = true;
+
+            KeyItem key = new KeyItem(_player) { Name = "열쇠" };
+            key.ContractPlayer();
+        }
 
         if(InputManager.GetKey(ConsoleKey.UpArrow))
         {
@@ -67,8 +77,8 @@ public class Puzzle : GameObject, IInteractable
         {
             Solve();
         }
-
     }
+
     public void Render()
     {
         if(!IsActive) { return; }
@@ -84,7 +94,10 @@ public class Puzzle : GameObject, IInteractable
         {
             IsSolved = true;
             Symbol = "🔕";
-            NoticeText.Text = "답을 맞췄다!";
+            _player.RoomCell.SetOnObject(_player.RoomCell.CurrentIndex,
+                Symbol, ContractPlayer);
+            NoticeText.Text = "답을 맞추자 열쇠가 떨어졌다!";
+            IsSolved = true;
         }
 
         else
